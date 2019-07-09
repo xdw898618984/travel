@@ -16,6 +16,9 @@ module.exports = {
     }
 }
 
+
+
+
 // const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
 //   .BundleAnalyzerPlugin;
 // const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
