@@ -12,7 +12,7 @@ module.exports = {
         //修改文件引入自定义路径
         config.resolve.alias
             .set('@', resolve('src'))
-            .set('style', resolve('src/assets/style'))
+            .set('styles', resolve('src/assets/styles'))
     }
 }
 
