@@ -1,22 +1,18 @@
 <template>
   <div class="icons">
-    <div class="icon" v-for="item of imgList" :key="item.id">
-      <div class="icon-img" >
-        <img
-          class="icon-img-content"
-          :src="item.imgUrl"
-          alt
-        />
-        <p class="icon-desc">{{item.name}}</p>
-      </div>
-    </div>
-    <div class="icon"></div>
-    <div class="icon"></div>
-    <div class="icon"></div>
-    <div class="icon"></div>
-    <div class="icon"></div>
-    <div class="icon"></div>
-    <div class="icon"></div>
+    <swiper :options="swiperOption">
+      <!-- slides -->
+      <swiper-slide v-for="(item,index) of pages" :key="index">
+        <div class="icon" v-for="items of item" :key="items.id">
+          <div class="icon-img">
+            <img class="icon-img-content" :src="items.imgUrl" alt />
+            <p class="icon-desc">{{items.name}}</p>
+          </div>
+        </div>
+      </swiper-slide>
+
+      <!-- <div class="swiper-pagination" slot="pagination"></div> -->
+    </swiper>
   </div>
 </template>
 <script>
@@ -24,6 +20,11 @@ export default {
   name: "HomeIcons",
   data() {
     return {
+      swiperOption: {
+        // pagination: {
+        //   el: ".swiper-pagination"
+        // }
+      },
       imgList: [
         {
           id: "1",
@@ -72,29 +73,49 @@ export default {
           name: "北京野生动物园",
           imgUrl:
             "http://img1.qunarzz.com/piao/fusion/1803/fa/2548667cb6e902.png"
+        },
+        {
+          id: "9",
+          name: "xxx",
+          imgUrl:
+            "http://img1.qunarzz.com/piao/fusion/1803/fa/2548667cb6e902.png"
         }
       ]
     };
+  },
+  computed: {
+    pages() {
+      const pages = [];
+      this.imgList.forEach((item, index) => {
+        const page = Math.floor(index / 8);
+
+        if (!pages[page]) {
+          pages[page] = [];
+        }
+        pages[page].push(item);
+      });
+      return pages;
+    }
   }
 };
 </script>
 <style lang="stylus" scoped>
 @import '~@/assets/styles/varibles.styl';
-
-.icons {
-  overflow: hidden;
-  width: 100%;
+@import '~@/assets/styles/mixins.styl';
+* {
+    touch-action: pan-y;
+}
+.icons >>>.swiper-container
   height: 0;
   padding-bottom: 50%;
-
-  .icon {
+.icon 
     overflow: hidden;
     float: left;
     width: 25%;
     padding-bottom: 25%;
     position: relative;
 
-    .icon-img {
+    .icon-img 
       position: absolute;
       top: 0;
       left: 0;
@@ -103,14 +124,14 @@ export default {
       box-sizing: border-box;
       padiing: 0.1rem;
 
-      .icon-img-content {
+      .icon-img-content 
         display: block;
         margin: 0 auto;
         height: 100%;
-      }
-    }
+      
+    
 
-    .icon-desc {
+    .icon-desc 
       position: absolute;
       left: 0;
       right: 0;
@@ -118,7 +139,8 @@ export default {
       line-height: 0.44rem;
       text-align: center;
       color: $darkTextColor;
-    }
-  }
-}
+      ellipsis();
+ 
+    
+  
 </style>
