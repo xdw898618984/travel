@@ -1,0 +1,153 @@
+{
+    "ret": true,
+    "data": {
+      "swiperList": [
+        {
+          "id": "001",
+          "imgUrl":
+            "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20197/a4c27b0a5fc1d9e9e620225869089b12.jpg_750x200_e4720428.jpg"
+        },
+        {
+          "id": "002",
+          "imgUrl":
+            "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20196/818f6cc784ae6669b74bbbb255414a53.jpg_750x200_66ca5873.jpg"
+        },
+        {
+          "id": "003",
+          "imgUrl":
+            "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20196/a5d26ebec399b3aef013f45771ae96f0.jpg_750x200_de947eef.jpg"
+        }
+
+      ],
+      "iconList": [
+        {
+          "id": "1",
+          "desc": "景点门票",
+          "imgUrl":
+            "http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png"
+        },
+        {
+          "id": "2",
+          "desc": "故宫",
+          "imgUrl":
+            "http://img1.qunarzz.com/piao/fusion/1803/6c/9e54a8540fee0102.png"
+        },
+        {
+          "id": "3",
+          "desc": "北京必游",
+          "imgUrl":
+            "http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png"
+        },
+        {
+          "id": "4",
+          "desc": "水上乐园",
+          "imgUrl":
+            "http://img1.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png"
+        },
+        {
+          "id": "5",
+          "desc": "爬长城",
+          "imgUrl":
+            "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20191/0334cf5430b9b5505fd79e2b8d7e8670.png"
+        },
+        {
+          "id": "6",
+          "desc": "北京欢乐谷",
+          "imgUrl":
+            "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/338c5b924c5809e8c7b14f60a953c3e2.png"
+        },
+        {
+          "id": "7",
+          "desc": "动植物园",
+          "imgUrl":
+            "http://img1.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png"
+        },
+        {
+          "id": "8",
+          "desc": "北京野生动物园",
+          "imgUrl":
+            "http://img1.qunarzz.com/piao/fusion/1803/fa/2548667cb6e902.png"
+        },
+        {
+          "id": "9",
+          "desc": "xxx",
+          "imgUrl":
+            "http://img1.qunarzz.com/piao/fusion/1803/fa/2548667cb6e902.png"
+        }
+      ],
+      "recommendList": [
+        {
+          "id": "1",
+          "imgUrl":
+            "http://img1.qunarzz.com/sight/p0/1709/41/411f234d79457081a3.img.jpg_200x200_ea02ef99.jpg",
+          "title": "长隆野生动物世界",
+          "desc": "熊猫三胞胎与您共享欢乐时光"
+        },
+        {
+          "id": "2",
+          "imgUrl":
+            "http://img1.qunarzz.com/sight/p0/1707/88/889ae02b07140066a3.img.jpg_200x200_d3b1427c.jpg",
+          "title": "长隆欢乐世界",
+          "desc": "爱挑战的你怎能错过垂直过山车"
+        },
+        {
+          "id": "3",
+          "imgUrl":
+            "http://img1.qunarzz.com/sight/p0/1511/89/894fa87d78ab240890.water.jpg_200x200_9eb09344.jpg",
+          "title": "锦绣香江温泉城",
+          "desc": "珠三角的绿肺，尽享私人别墅的奢华"
+        },
+        {
+          "id": "4",
+          "imgUrl":
+            "http://img1.qunarzz.com/sight/p0/1603/3c/3c514c20a740128b90.water.jpg_200x200_c7102a23.jpg",
+          "title": "南沙百万葵园",
+          "desc": "南沙区"
+        },
+        {
+          "id": "5",
+          "imgUrl":
+            "http://img1.qunarzz.com/sight/p0/1603/ee/ee3013caaa28ae7490.water.jpg_200x200_f052dfc4.jpg",
+          "title": "增城白水寨风景名胜区",
+          "desc": "奇趣水谷与天南第一梯"
+        }
+      ],
+      "weekendList": [
+        {
+          "id": "1",
+          "imgUrl":
+            "http://img1.qunarzz.com/sight/source/1811/15/66f14e0fd6fbb.jpg_r_640x214_5d69f21d.jpg",
+          "title": "长隆野生动物世界",
+          "desc": "熊猫三胞胎与您共享欢乐时光"
+        },
+        {
+          "id": "2",
+          "imgUrl":
+            "http://img1.qunarzz.com/sight/source/1811/b8/5d599bbdcf8b57.jpg_r_640x214_2ee055e3.jpg",
+          "title": "长隆欢乐世界",
+          "desc": "爱挑战的你怎能错过垂直过山车"
+        },
+        {
+          "id": "3",
+          "imgUrl":
+            "http://img1.qunarzz.com/sight/source/1505/92/580e9ea4f37a1b.jpg_r_640x214_72112761.jpg",
+          "title": "锦绣香江温泉城",
+          "desc": "珠三角的绿肺，尽享私人别墅的奢华"
+        },
+        {
+          "id": "4",
+          "imgUrl":
+            "http://img1.qunarzz.com/sight/source/1811/f8/29dfa785277839.jpg_r_640x214_7d051523.jpg",
+          "title": "南沙百万葵园",
+          "desc": "南沙区"
+        },
+        {
+          "id": "5",
+          "imgUrl":
+            "http://img1.qunarzz.com/sight/source/1812/47/cbdc44f461db0d.jpg_r_640x214_aab1da76.jpg",
+          "title": "增城白水寨风景名胜区",
+          "desc": "奇趣水谷与天南第一梯"
+        }
+      ]
+    }
+  }
