@@ -1,10 +1,10 @@
 
   <template>
   <div class="wapper">
-    <swiper :options="swiperOption">
+    <swiper :options="swiperOption" v-if="swiperList.length">
       <!-- slides -->
       <swiper-slide v-for="item of swiperList" :key="item.id">
-        <img class="swiper-img" :src="item.baseUrl" alt />
+        <img class="swiper-img" :src="item.imgUrl" alt />
       </swiper-slide>
 
       <!-- Optional controls -->
@@ -18,6 +18,9 @@
 <script>
 export default {
   name: "HomeSwiper",
+  props:{
+    swiperList:Array
+  },
   data() {
     return {
       swiperOption: {
@@ -29,24 +32,7 @@ export default {
         // 所有的参数同 swiper 官方 api 参数
         // ...
       },
-      swiperList: [
-        {
-          id: "001",
-          baseUrl:
-            "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20197/a4c27b0a5fc1d9e9e620225869089b12.jpg_750x200_e4720428.jpg"
-        },
-        {
-          id: "002",
-          baseUrl:
-            "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20196/818f6cc784ae6669b74bbbb255414a53.jpg_750x200_66ca5873.jpg"
-        },
-        {
-          id: "003",
-          baseUrl:
-            "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20196/a5d26ebec399b3aef013f45771ae96f0.jpg_750x200_de947eef.jpg"
-        }
 
-      ]
     };
   }
 };
