@@ -6,39 +6,41 @@
     <div class="header-input">
       <span class="iconfont">&#xe67b;</span>
     </div>
-    <div class="header-right">
-      {{city}}
-      <span class="iconfont arrow-icon">&#xe64a;</span>
-    </div>
+
+    <router-link to="/city">
+      <div class="header-right">
+        {{city}}
+        <span class="iconfont arrow-icon">&#xe64a;</span>
+      </div>
+    </router-link>
   </div>
 </template>
 <script>
 export default {
   name: "HomeHeader",
-  props: ['city']
+  props: ["city"]
 };
 </script>
 <style lang="stylus" scoped>
 @import '~@/assets/styles/varibles.styl';
 
-.header {
+.header 
   display: flex;
-  line-height: 0.86rem;
+  line-height: $headerHeight;
   background: $bgColor;
   color: #fff;
 
-  .header-left {
+  .header-left 
     width: 0.64rem;
     float: left;
     text-align: center;
 
-    .back-icont {
+    .back-icont 
       text-align: center;
       font-size: 0.4rem;
-    }
-  }
+   
 
-  .header-input {
+  .header-input 
     flex: 1;
     background: #fff;
     height: 0.64rem;
@@ -48,19 +50,17 @@ export default {
     margin-left: 0.2rem;
     color: #ccc;
     padding-left: 0.2rem;
-  }
+  
 
-  .heder-right {
+  .heder-right 
     width: 1.24rem;
     float: right;
-
-    text-align :center {
-      .arrow-icon {
+    color: #ffffff;
+    text-align :center 
+      .arrow-icon 
         font-size: 0.2rem;
         margin-left: -0.04rem;
-      }
-    }
-  }
-}
+      
+    
 </style>
 
