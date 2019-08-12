@@ -1,31 +1,89 @@
 <template>
-  <ul class="list"  >
-    <li class="item" v-for="(item,key) of cities" :key="key">{{key}}</li>
+  <ul class="list">
+    <li
+      class="item"
+      v-for="item of letters"
+      :key="item"
+      :ref="item"
+      @touchstart="hhandleTouchStart"
+      @touchmove="hhandleTouchMove"
+      @touchend="hhandleTouchEnd"
+      @click="handleLetterCLick"
+    >{{item}}</li>
   </ul>
 </template>
 <script>
 export default {
   name: "CityAlphabet",
-  props:{
-      cities:Object
+  props: {
+    cities: Object
+  },
+  data() {
+    return {
+      touchStatus: false,
+      startY: 0,
+      timer: null
+    };
+  },
+  updated() {
+    this.startY = this.$refs["A"][0].offsetTop;
+  },
+  computed: {
+    // 计算属性
+    letters() {
+      const letters = [];
+      for (let i in this.cities) {
+        letters.push(i);
+      }
+
+      return letters;
+    }
+  },
+  methods: {
+    handleLetterCLick(e) {
+      this.$emit("change", e.target.innerText);
+    },
+    hhandleTouchStart(e) {
+      this.touchStatus = true;
+    },
+    hhandleTouchMove(e) {
+      if (this.touchStatus) {
+        if (this.timer) {
+          clearTimeout(this.timer);
+        }
+        this.timer = setTimeout(() => {
+          const touchY = e.touches[0].clientY - 52;
+          const index = Math.floor((touchY - this.startY) / 22);
+          if (index >= 0 && index <= this.letters.length) {
+            this.$emit("change", this.letters[index - 1]);
+          }
+        }, 16);
+      }
+    },
+    hhandleTouchEnd(e) {
+      this.touchStatus = false;
+    }
   }
 };
 </script>
 
 <style lang="stylus" scoped>
 @import '~@/assets/styles/varibles.styl';
-.list 
-   display:flex
-   flex-direction:column
-   justify-content: center
-   position: absolute
-   top: 1.58rem
-   right: 0
-   bottom: 0 
-   width: 0.4rem
-   .item
-     line-height: 0.44rem
-     text-align: center 
-     color: $bgColor
 
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 1.58rem;
+  right: 0;
+  bottom: 0;
+  width: 0.4rem;
+
+  .item {
+    line-height: 0.44rem;
+    text-align: center;
+    color: $bgColor;
+  }
+}
 </style>
