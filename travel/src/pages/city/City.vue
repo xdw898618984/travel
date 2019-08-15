@@ -1,7 +1,7 @@
 <template>
   <div>
     <city-header></city-header>
-    <city-search></city-search>
+    <city-search :cities="cities"></city-search>
     <city-list :cities="cities" :hot="hotCities" :letter="letter"></city-list>
     <city-alphabet :cities="cities" @change="handleLetterChange"></city-alphabet>
   </div>
@@ -16,6 +16,7 @@ import CityAlphabet from "./components/Alphabet";
 import axios from "axios"; //引入axios
 export default {
   name: "City",
+
   components: {
     CityHeader,
     CitySearch,
@@ -45,7 +46,7 @@ export default {
     },
     handleLetterChange(letter) {
       // console.log(letter);
-      this.letter=letter
+      this.letter = letter;
     }
   },
   mounted() {

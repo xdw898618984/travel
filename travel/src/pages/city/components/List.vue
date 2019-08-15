@@ -30,7 +30,7 @@
   </div>
 </template>
 <script>
-import BScroll from "@better-scroll/core";
+import BScroll from "better-scroll";
 
 // import PullUp from "@better-scroll/pull-up";
 // BScroll.use(Pullup)
@@ -52,17 +52,41 @@ export default {
     }
   },
 
-
   mounted() {
     // setTimeout(() => {
     //   this.$nextTick(() => {
     //     this.scroll = new BScroll(this.$refs.wrapper, {});
     //   });
     // }, 20);
-
     setTimeout(() => {
-      this.scroll = new BScroll(this.$refs.wrapper);
-    }, 100);
+      this.$nextTick(() => {
+        if (!this.scroll) {
+          this.scroll = new BScroll(this.$refs.wrapper, {
+            probeType: 3,
+            // 允许使用点击事件
+            click: true,
+            // 允许上拉加载
+            pullUpLoad: {
+              threshold: -10
+            },
+            // 允许下拉加载
+            pullDownRefresh: {
+              threshold: 100,
+              stop: 0
+            },
+            // scrollbar: {
+            //   fade: false,
+            //   interactive: true // 1.8.0 新增
+            // }
+          });
+          this.scroll.on("scroll", position => {
+            window.console.log(position);
+          });
+        } else {
+          this.scroll.refresh();
+        }
+      });
+    }, 1000);
   }
 };
 </script>

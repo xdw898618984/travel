@@ -3,15 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service --host 0.0.0.0 serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "axios": "^0.19.0",
-    "better-scroll": "^2.0.0-alpha.20",
+    "better-scroll": "^1.15.2",
     "core-js": "^2.6.5",
     "fastclick": "^1.0.6",
+    "ifconfig": "0.0.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "vue": "^2.6.10",
