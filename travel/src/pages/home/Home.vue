@@ -39,7 +39,6 @@ export default {
       axios.get("/api/index.json").then(res => {
         this.getHomeInfoSucc(res);
       });
-
       axios.get("https://www.easy-mock.com/mock/5d282baa8fc0b51619312f60/https/query").then(res=>{
         console.log(res);
         

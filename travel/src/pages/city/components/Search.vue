@@ -6,7 +6,7 @@
 
     <div class="search-content" ref="search" v-show="keyword">
       <ul>
-        <li class="search-item border-bottom" v-for="item of list" :key="item.id">{{item.name}}</li>
+        <li class="search-item border-bottom"  v-for="item of list" :key="item.id">{{item.name}}</li>
         <li class="search-item border-bottom" v-show="hasNoData">没有匹配数据</li>
       </ul>
     </div>
@@ -34,6 +34,7 @@ export default {
       return !this.list.length;
     }
   },
+  
   watch: {
     keyword() {
       if (this.timer) {
