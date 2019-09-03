@@ -5,7 +5,7 @@
         <div class="title border-topbottom">当前城市</div>
         <div class="button-list">
           <div class="button-warpper">
-            <div class="button">北京</div>
+            <div class="button">{{this.currentCity}}</div>
           </div>
         </div>
       </div>
@@ -14,7 +14,12 @@
         <div class="title border-topbottom">热门城市</div>
 
         <div class="button-list">
-          <div class="button-warpper" v-for="item of hot" :key="item.id">
+          <div
+            class="button-warpper"
+            v-for="item of hot"
+            :key="item.id"
+            @click="handleCityClick(item.name)"
+          >
             <div class="button">{{item.name}}</div>
           </div>
         </div>
@@ -23,7 +28,12 @@
         <div class="title border-topbottom">{{key}}</div>
 
         <div class="item-list">
-          <div class="item border-bottom" v-for="inner of item" :key="inner.id">{{inner.name}}</div>
+          <div
+            class="item border-bottom"
+            v-for="inner of item"
+            :key="inner.id"
+            @click="handleCityClick(inner.name)"
+          >{{inner.name}}</div>
         </div>
       </div>
     </div>
@@ -34,8 +44,15 @@ import BScroll from "better-scroll";
 
 // import PullUp from "@better-scroll/pull-up";
 // BScroll.use(Pullup)
+
+import { mapState ,mapMutations} from "vuex";
 export default {
   name: "CityList",
+  computed: {
+    ...mapState({
+      currentCity: 'city'
+    })
+  },
 
   props: {
     hot: Array,
@@ -50,6 +67,17 @@ export default {
         this.scroll.scrollToElement(element);
       }
     }
+  },
+  methods: {
+    handleCityClick(city) {
+      //vue 调用dispatch
+      // this.$store.dispatch('changeCity',city)
+      //可以直接调用commit
+      // this.$store.commit("changeCity", city);
+      this.changeCity(city)
+      this.$router.push("/");
+    },
+    ...mapMutations(['changeCity'])
   },
 
   mounted() {
@@ -73,7 +101,7 @@ export default {
             pullDownRefresh: {
               threshold: 100,
               stop: 0
-            },
+            }
             // scrollbar: {
             //   fade: false,
             //   interactive: true // 1.8.0 新增

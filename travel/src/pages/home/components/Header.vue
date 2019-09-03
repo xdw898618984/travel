@@ -9,16 +9,21 @@
 
     <router-link to="/city">
       <div class="header-right">
-        {{city}}
+        {{this.dobuleCity}}
         <span class="iconfont arrow-icon">&#xe64a;</span>
       </div>
     </router-link>
   </div>
 </template>
 <script>
+
+import {mapState,mapGetters} from "vuex"
 export default {
   name: "HomeHeader",
-  props: ["city"]
+  computed: {
+    ...mapState(['city']),
+    ...mapGetters(['dobuleCity'])
+  },
 };
 </script>
 <style lang="stylus" scoped>
